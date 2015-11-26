@@ -8,6 +8,7 @@ Source - National Center for Chronic Disease Prevention and Health Promotion | D
 
 * Behavioral Risk Factor Surveillance System (BRFSS)
 *http://www.cdc.gov/sleep/data_statistics.html*
+
 * Plotting Alaska, Hawaii
 *https://gregorybooma.wordpress.com/2013/01/05/map-of-the-united-states-including-alaska-and-hawaii-with-r/*
 
@@ -79,6 +80,3 @@ map("world2Hires", "Hawaii", fill = TRUE,
 
 ```
 
-Task List:
-- [x] Generate States
-- [] Try other packages
