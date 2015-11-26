@@ -33,7 +33,7 @@ library(Hmisc)
 
 **Steps to generate US Map**
 
-1.  Import and clean dataset
+1)Import and clean dataset
 
 ``` r
 setwd('~/Documents/IM Vault/IST 719/Poster/Sample Dataset/Sleeping/')
@@ -52,7 +52,7 @@ df2014 <- merge(df2014, stateMapping, by = 'x.state')
 df2014 <- subset(df2014, sleptim1 <=24)
 ```
 
-1.  Label data and assign state name to vector
+2)Label data and assign state name to vector
 
 ``` r
 df2014$sleptim1_min <- df2014$sleptim1 *60
@@ -80,7 +80,7 @@ map('state')
 
 ![](ColoringMap_files/figure-markdown_github/unnamed-chunk-3-1.png)
 
-1.  Map labeled values to particular areas of map
+3)Map labeled values to particular areas of map
 
 ``` r
 tmp <- map('state',plot=FALSE,namesonly=TRUE )
@@ -91,7 +91,7 @@ map('state', fill=TRUE,
 
 ![](ColoringMap_files/figure-markdown_github/unnamed-chunk-4-1.png)
 
-1.  Add not-connected area - Alaska
+4)Add not-connected area - Alaska
 
 ``` r
 tmp <- map('world2Hires', "USA:Alaska",plot=FALSE,namesonly=TRUE )
@@ -102,7 +102,7 @@ map("world2Hires", "USA:Alaska", fill = TRUE,
 
 ![](ColoringMap_files/figure-markdown_github/unnamed-chunk-5-1.png)
 
-1.  Add not-connected area - Hawaii
+5)Add not-connected area - Hawaii
 
 ``` r
 tmp <- map('world2Hires', "Hawaii",plot=FALSE,namesonly=TRUE )

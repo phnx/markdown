@@ -20,7 +20,7 @@ library(Hmisc)
 
 **Steps to generate US Map**
 
-1. Import and clean dataset
+1)Import and clean dataset
 ```{r}
 setwd('~/Documents/IM Vault/IST 719/Poster/Sample Dataset/Sleeping/')
 df2014 <- sasxport.get('BRFSS/2014/LLCP2014.XPT', as.is = TRUE)
@@ -34,7 +34,7 @@ df2014 <- subset(df2014, sleptim1 <=24)
 
 ```
 
-2. Label data and assign state name to vector
+2)Label data and assign state name to vector
 ```{r}
 
 df2014$sleptim1_min <- df2014$sleptim1 *60
@@ -54,7 +54,7 @@ head(valueLabel)
 map('state')
 ```
 
-3. Map labeled values to particular areas of map
+3)Map labeled values to particular areas of map
 ```{r}
 tmp <- map('state',plot=FALSE,namesonly=TRUE )
 tmp <- match(gsub('(:.*)','',tmp),c(tolower(state_avg$Group.1)))
@@ -63,7 +63,7 @@ map('state', fill=TRUE,
 
 ```
 
-4. Add not-connected area - Alaska
+4)Add not-connected area - Alaska
 ```{r}
 tmp <- map('world2Hires', "USA:Alaska",plot=FALSE,namesonly=TRUE )
 tmp <- match('alaska',c(tolower(state_avg$Group.1)))
@@ -71,7 +71,7 @@ map("world2Hires", "USA:Alaska", fill = TRUE,
     col=rgb(colorRamp(c('pink', 'darkblue'))(valueLabel), max=255)[tmp])
 ```
 
-5. Add not-connected area - Hawaii
+5)Add not-connected area - Hawaii
 ```{r}
 tmp <- map('world2Hires', "Hawaii",plot=FALSE,namesonly=TRUE )
 tmp <- match('hawaii', c(tolower(state_avg$Group.1)))
