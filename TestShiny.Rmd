@@ -1,0 +1,21 @@
+---
+title: "TestShiny"
+output: html_document
+runtime: shiny
+---
+Shiny in Markdown document
+
+```{r, echo = FALSE}
+selectInput("dataset", "Choose Dataset:", c("cars", "iris", "mtcars"))
+
+activeDataset <- reactive({
+  get(input$dataset, pos="package:datasets", inherits=FALSE)
+})
+
+renderTable({
+  head(activeDataset(), 5)
+})
+
+renderPlot({
+  plot(activeDataset())
+})

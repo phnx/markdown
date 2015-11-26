@@ -1,0 +1,25 @@
+---
+title: "Test Markdown Syntax"
+output: html_document
+---
+
+#Header 1
+##Header 2
+
+**Bold Text**
+*Italic Text*
+
+* Unordered List
+    + Unordered Sublist
+    
+1. Ordered List 1
+2. Ordered List 2
+
+```{r}
+summary(cars)
+```
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
